@@ -34,15 +34,33 @@ foreach ($data['ativos'] as $key => $stock) {
     $cotacao        =   strtofloat($stock['Cotação']);
 
     $pontos         +=  $setor  * 100;
-    if ($pl <> 0)            $pontos +=  90  / $pl;
-    if ($evebitda <> 0)      $pontos +=  80  / $evebitda;
-    if ($margliquida > 0 && $margliquida < 100)   $pontos +=  1.70  * $margliquida;
-    if ($cresrec5a > 0 && $cresrec5a < 100)     $pontos +=  1.60  * $cresrec5a;
-    if ($lpa <> 0)           $pontos +=  50  / ($cotacao / $lpa);
-    //if ($vpa <> 0)           $pontos +=  40  / ($cotacao / $vpa);
-    if ($liquidezcorr > 0)   $pontos +=  1.30  * $liquidezcorr;
-    if ($divbrpatrim > 0)   $pontos +=  20  / $divbrpatrim;
-    if ($divyield > 0 && $divyield < 100)      $pontos +=  1.10  * $divyield;
+    if ($pl > 1 && $pl < 100) {
+        $pontos +=  90  / $pl;
+    }
+    if ($evebitda > 1 && $evebitda < 100) {
+        $pontos +=  80  / $evebitda;
+    }
+    if ($margliquida > 0 && $margliquida < 100) {
+        $pontos +=  1.70  * $margliquida;
+    }
+    if ($cresrec5a > 0 && $cresrec5a < 100) {
+        $pontos +=  1.60  * $cresrec5a;
+    }
+    if ($lpa > 0 && $lpa < $cotacao) {
+        $pontos +=  50  / ($cotacao / $lpa);
+    }
+    if ($vpa > 0 && $vpa < $cotacao) {
+        $pontos +=  40  / ($cotacao / $vpa);
+    }
+    if ($liquidezcorr > 0) {
+        $pontos +=  1.30  * $liquidezcorr;
+    }
+    if ($divbrpatrim > 1) {
+        $pontos +=  20  / $divbrpatrim;
+    }
+    if ($divyield > 0 && $divyield < 100) {
+        $pontos +=  1.10  * $divyield;
+    }
 
     $data['ativos'][$key]['Pontos']   =   $pontos;
 }

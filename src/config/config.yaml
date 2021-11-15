@@ -1,0 +1,44 @@
+---
+  stock:
+    list:
+      server:
+        url:
+          http://3.144.212.85:3001/
+        ip: 
+          3.144.212.85
+        port:
+          3001
+        uri:
+          /
+
+    generator:
+      server:
+        url:
+          http://3.144.212.85:3001/generator
+        ip:
+          3.144.212.85
+        port:
+          3001
+        uri:
+          /generator
+  
+  sectors:
+    all:
+    buy:
+    sell:
+  subsectors:
+    all:
+    buy:
+      - Bancos
+      - Energia Elétrica
+      - Papel e Celulose
+      - Água e Saneamento
+      - Seguradoras
+      - Exploração de Imóveis
+      - Siderurgia
+      - Serv.Méd.Hospit. Análises e Diagnósticos
+      - Tecidos, Vestuário e Calçado
+      - Petróleo e Gás
+    sell:
+      - Minerais Metálicos
+...

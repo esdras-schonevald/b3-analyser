@@ -1,0 +1,21 @@
+{
+    "name": "b3/analyser",
+    "description": "A free analyser system of B3 stocks",
+    
+    "authors": [
+        {
+            "name": "Adiel Esdras Schonevald Tolentino"
+        },
+        {
+            "name": "Alex Soares Quintino"
+        },
+        {
+            "name": "Isaias Marcelino"
+        }
+    ],
+
+    "require": {
+        "php": ">=8.0",
+        "ext-yaml": "^2.2"
+    }
+}
